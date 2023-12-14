@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BoredAPIPlay.MainPage"
+             xmlns:local="clr-namespace:BoredAPIPlay.ViewModels">
+    <ContentPage.BindingContext>
+        <local:BoredViewModel/>
+        <!--<local:BoredValues/>-->
+    </ContentPage.BindingContext>
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+
+            <Label Text="I am bored!" FontSize="Title"/>
+            <Button Text="Give me something to do" Command="{Binding ConsumeRestCommand}"/>
+            <Label Text="{Binding BoredValues.activity}" FontSize="Medium"/>
+            <Label Text="{Binding BoredValues.type}" FontSize="Medium"/>
+            <Label Text="{Binding BoredValues.participants}" FontSize="Medium"/>
+            <Label Text="{Binding BoredValues.price}" FontSize="Medium"/>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
