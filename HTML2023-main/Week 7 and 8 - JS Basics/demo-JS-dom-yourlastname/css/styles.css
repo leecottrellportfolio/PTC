@@ -1,0 +1,28 @@
+/*
+Author:
+Date: Dec 21, 2023
+File Name: styles.css
+*/
+
+body {
+    padding: 1rem;
+    border: solid 1px black;
+}
+
+.container {
+    padding: 1rem;
+    border: solid 1px red;
+}
+
+form {
+    padding: 1rem;
+    border: solid 1px blue;
+}
+
+.fiery {   
+    color:#ff9999;
+    background-color:#990000;
+    border: #ff0000 solid 10px;
+}
+
+    

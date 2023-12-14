@@ -1,0 +1,25 @@
+table{
+	width:50%;
+	border: solid 2px #000000;
+	background-color:orange;
+
+
+}
+td{
+	border-bottom:solid .5px #000000;
+}
+
+/*td:last-child{
+	border-bottom: none;;
+}*/
+
+td.noBorder{
+	border-bottom: none;
+}
+
+.title{
+	text-align: center;
+	font-size: large;
+	background-color: #000000;
+	color:orange;
+}

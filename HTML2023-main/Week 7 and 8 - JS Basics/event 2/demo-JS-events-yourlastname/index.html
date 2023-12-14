@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!-- 
+	Student Name: 
+	File Name: index.html
+	Today's Date: Mar 1, 2023
+ -->
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Demo - Events and Conditions</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/script.js" defer></script>
+</head>
+
+<body>
+  <header>
+    <h1>JS Demo - Events and Conditions</h1>
+  </header>
+
+  <main class="narrow-main">
+    
+
+    <div>
+      <h3>Events with Normal Elements</h3>
+      <a href="#" id="metalLink">Click me to choose metal</a> <br>
+      <a href="#" id="countryLink">Click me to choose country</a>
+      <p id="feedback">Feedback goes here</p>
+    </div>
+
+    <div>
+      <a href="#" id="redLink">Color the feedback red</a> <br>
+      <a href="#" id="greenLink">Color the feedback green</a>
+      <a href="#" id="hideFeedback">Hide the feedback</a>
+    </div>
+
+    <div id="colorMe">
+      <h3>Events with Input Elements</h3>
+      <p>What's your favorite color?
+        <input type="color" id="input-color">
+        <button id="done-button">Done</button>
+      </p>
+    </div>
+
+    <div>
+      <h3>Events with Select Elements</h3>
+      <select id="select-color">
+        <option>red</option>
+        <option>blue</option>
+        <option>yellow</option>
+      </select>
+    </div>
+
+    <form id="my-form" action="process.html" method="post">
+      <h3>An Actual Form with its own Action</h3>
+      <p>Your Shoe Size: <input type="text" id="input-ssize">
+        <button type="submit">Submit this form</button></p>
+        <p id="ssize-feedback">Feedback goes here</p>
+    </form>
+  </main>
+
+</body>
+
+</html>

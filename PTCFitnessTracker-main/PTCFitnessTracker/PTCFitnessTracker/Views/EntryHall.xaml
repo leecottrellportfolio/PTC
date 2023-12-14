@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PTCFitnessTracker.Views.EntryHall"
+             Title="EntryHall">
+    <ScrollView>
+        <VerticalStackLayout>
+
+            <Image
+                Source="ptclogowhite.png"
+                SemanticProperties.Description="PTC Logo"
+                HeightRequest="100"
+                HorizontalOptions="Start" />
+
+            <Label
+                Text="Entry Hall Equipment"
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="32"
+                HorizontalOptions="Center" />
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Label Text="Dumbbell"
+                       VerticalOptions="Center"
+                       FontSize="Large"
+                       Grid.Column="0" Grid.Row="0"></Label>
+                <Label Text="Leg Press"
+                       VerticalOptions="Center"
+                       FontSize="Large"
+                       Grid.Column="0" Grid.Row="1"></Label>
+                <Label Text="Resistance Band"
+                       VerticalOptions="Center"
+                       FontSize="Large"
+                       Grid.Column="0" Grid.Row="2"></Label>
+
+                <ImageButton AutomationId="dumb bell" Source="dumbbell.jpg" Grid.Column="1" Grid.Row="0" 
+                             HeightRequest="{OnPlatform WinUI=150}"
+                             Clicked="RecordExercise"/>
+                <ImageButton AutomationId="leg press" 
+                             HeightRequest="{OnPlatform WinUI=150}"
+                             Source="legpress.jpg" Grid.Column="1" Grid.Row="1" Clicked="RecordExercise"/>
+                <ImageButton AutomationId="resistance band" 
+                             HeightRequest="{OnPlatform WinUI=150}"
+                             Source="resistanceband.jpg" Grid.Column="1" Grid.Row="2" Clicked="RecordExercise"/>
+
+            </Grid>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

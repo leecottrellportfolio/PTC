@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PTCFitnessTracker.Views.DataEntry"
+             xmlns:local="clr-namespace:PTCFitnessTracker.ViewModels"
+             Title="DataEntry">
+
+    <ScrollView BackgroundColor="{StaticResource PTCBlue}">
+    <VerticalStackLayout>
+
+        <Image
+                Source="ptclogowhite.png"
+                SemanticProperties.Description="PTC Logo"
+                HorizontalOptions="Start" />
+
+        <Label
+                Text="Record Exercise"
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="32"
+                HorizontalOptions="Center" />
+        <Grid RowSpacing="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Label Text="Equipment" Grid.Column="0" Grid.Row="0"/>
+            <Label Text="Weight" Grid.Column="0" Grid.Row="1"/>
+            <Label Text="Reps" Grid.Column="0" Grid.Row="2"/>
+            <Label Text="Date" Grid.Column="0" Grid.Row="3"/>
+            <Button Text="Record Workout" Grid.ColumnSpan="2" Grid.Row="4" Clicked="EnterData"/>
+
+            <!-- this is not perfect yet-->
+            <Entry x:Name="EquipEnter" Text="{Binding EquipName}" Grid.Column="1" Grid.Row="0"/>
+            <Entry x:Name ="WeightEnter" Placeholder ="###" Text="" Keyboard="Numeric" Grid.Column="1" Grid.Row="1"/>
+            <Entry x:Name ="RepEnter" Text="" Placeholder ="###" Keyboard="Numeric" Grid.Column="1" Grid.Row="2"/>
+            <DatePicker x:Name="DateEnter" Grid.Column="1" Grid.Row="3"/>
+
+        </Grid>
+
+        <!-- build the button and grid to show-->
+        <Button Text="Show Workouts" Clicked="showList" HorizontalOptions="CenterAndExpand"/>
+
+        <CollectionView x:Name="workoutList">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label HorizontalOptions="Start" Text="{Binding WorkoutDate}" Grid.Column="0"/>
+                        <Label HorizontalOptions="Start" Text="{Binding Weight}" Grid.Column="1"/>
+                        <Label HorizontalOptions="Start" Text="{Binding Repetitions}" Grid.Column="2"/>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+    </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
